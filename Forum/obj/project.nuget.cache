@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "hW5ZRlETebGYRySrxhYkocfVZMZJxacFSDw9E40WDRUUuv0MgI/5uiXjzauqvC4XzDnTs+qVUy12dyFfbbg2hA==",
+  "success": true,
+  "projectFilePath": "C:\\workspace\\oop_csharp\\assignments\\Forum\\Forum\\Forum.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ed\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\microsoft.data.sqlite\\5.0.1\\microsoft.data.sqlite.5.0.1.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.1\\microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Ed\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
