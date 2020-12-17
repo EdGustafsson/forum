@@ -4,7 +4,14 @@ using System.Text;
 
 namespace Forum.Users
 {
-    class IUserRepository
+    public interface IUserRepository
     {
+        void PrintVersion();
+        bool UserExists(string userName, string password);
+
+        User GetUser(string userName);
+
+       // User GetUser(string userName, string password);
+
     }
 }

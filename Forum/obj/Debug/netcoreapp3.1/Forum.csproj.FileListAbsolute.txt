@@ -22,3 +22,13 @@ C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\runtimes
 C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\workspace\oop_csharp\assignments\Forum\Forum\obj\Debug\netcoreapp3.1\Forum.csproj.CopyComplete
 C:\workspace\oop_csharp\assignments\Forum\Forum\obj\Debug\netcoreapp3.1\Forum.csproj.CoreCompileInputs.cache
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\forum.db
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Forum.deps.json
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Forum.runtimeconfig.json
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Forum.runtimeconfig.dev.json
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Forum.dll
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Forum.pdb
+C:\workspace\oop_csharp\assignments\Forum\Forum\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\workspace\oop_csharp\assignments\Forum\Forum\obj\Debug\netcoreapp3.1\Forum.dll
+C:\workspace\oop_csharp\assignments\Forum\Forum\obj\Debug\netcoreapp3.1\Forum.pdb
+C:\workspace\oop_csharp\assignments\Forum\Forum\obj\Debug\netcoreapp3.1\Forum.genruntimeconfig.cache

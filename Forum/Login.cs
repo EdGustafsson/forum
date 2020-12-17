@@ -18,7 +18,7 @@ namespace Forum
             while (true)
             {
 
- 
+
                 User activeUser;
 
                 Console.WriteLine("\nEnter user ID:");
@@ -26,7 +26,7 @@ namespace Forum
                 Console.WriteLine("\nEnter user password");
                 string userInput2 = Console.ReadLine();
 
-                if (_userRepository.UserExist(userInput1, userInput2))
+                if (_userRepository.UserExists(userInput1, userInput2))
                 {
 
                     activeUser = _userRepository.GetUser(userInput1);
