@@ -24,7 +24,17 @@ namespace Forum.Users
         //public User GetUser(string userName)
         //{
         //}
+        public User GetUser(int userId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
 
+            var output = connection.Query<User>($"SELECT * FROM User WHERE Id='{userId}'");
+
+            User activeUser = output.First();
+
+            return activeUser;
+
+        }
         public User GetUser(string userName)
         {
             using var connection = new SqliteConnection(_connectionstring);
