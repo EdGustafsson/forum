@@ -5,6 +5,7 @@ using Forum.Users;
 using Forum.Threads;
 using System.Linq;
 using Forum.Posts;
+using System.Windows;
 
 namespace Forum
 {
@@ -88,6 +89,10 @@ namespace Forum
                         if (userInput2 == "d")
                         {
                             _postRepository.RemovePost(_activeUser, results[selectionNumber].Id);
+                        }
+                        else if (userInput == "e")
+                        {
+                            _postRepository.UpdatePost(_activeUser, results[selectionNumber].Id);
                         }
 
 

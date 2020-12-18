@@ -118,6 +118,29 @@ namespace Forum.Posts
 
         }
 
+        public void UpdatePost(User activeUser, int threadId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            Console.WriteLine("Input the id of the post you would like to edit");
+            string userInput = Console.ReadLine();
+            int cleanNum = Convert.ToInt32(userInput);
+
+            IList<PostResult> checkResults = GetUserPosts(activeUser, threadId, cleanNum);
+
+            if (checkResults.Any())
+            {
+                Console.WriteLine("Write new message");
+
+                string userInput2 = Console.ReadLine();
+
+                var sql = $"UPDATE Post SET Content='{userInput2}' WHERE Id={cleanNum}";
+
+                connection.Execute(sql);
+
+            }
+
+        }
     }
     public class PostResult
     {

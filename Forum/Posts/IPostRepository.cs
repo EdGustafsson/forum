@@ -12,5 +12,6 @@ namespace Forum.Posts
         void AddPost(User activeUser, int threadId);
         void PrintUserPosts(User activeUser, int id);
         void RemovePost(User activeUser, int threadId);
+        void UpdatePost(User activeUser, int threadId);
     }
 }
