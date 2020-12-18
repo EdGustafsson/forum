@@ -16,23 +16,32 @@ namespace Forum.Posts
         public void PrintAllPosts(int threadId)
         {
             int i = 1;
-            IList<Post> results = GetAllPosts(threadId);
+            IList<PostResult> results = GetAllPosts(threadId);
 
             foreach (var result in results)
             {
 
-                Console.WriteLine(i + " " + result.Content);
+                Console.WriteLine(result.UserName + " " + result.Content);
                 i++;
             }
         }
 
-        public IList<Post> GetAllPosts(int threadId)
+        public IList<PostResult> GetAllPosts(int threadId)
         {
             using var connection = new SqliteConnection(_connectionstring);
 
-            var output = connection.Query<Post>($"SELECT * FROM Post WHERE ThreadId={threadId}");
+          //  var output = connection.Query<Post>($"SELECT * FROM Post WHERE ThreadId={threadId}");
+
+            var output = connection.Query<PostResult>($"SELECT P.Id,P.Content,U.UserName FROM User U INNER JOIN Post P on U.Id = P.UserId WHERE ThreadId={threadId}");
 
             return output.ToList();
         }
+
+    }
+    public class PostResult
+    {
+        public int Id;
+        public string Content;
+        public string UserName;
     }
 }

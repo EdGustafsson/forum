@@ -10,7 +10,7 @@ namespace Forum.Threads
 
         void PrintAllThreads();
 
-        IList<Result> GetAllThreads();
+        IList<ThreadResult> GetAllThreads();
 
         void AddThread(User activeUser);
 

@@ -29,7 +29,7 @@ namespace Forum
             while (true)
             {
 
-                IList<Result> results = _threadRepository.GetAllThreads();
+                IList<ThreadResult> results = _threadRepository.GetAllThreads();
 
 
                 int i = 1;

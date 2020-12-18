@@ -16,7 +16,7 @@ namespace Forum.Threads
         {
 
             int i = 1;
-            IList<Result> results = GetAllThreads();
+            IList<ThreadResult> results = GetAllThreads();
 
             foreach (var result in results)
             {
@@ -43,11 +43,11 @@ namespace Forum.Threads
             connection.Execute(sql, newThread);
         }
 
-        public IList<Result> GetAllThreads()
+        public IList<ThreadResult> GetAllThreads()
         {
             using var connection = new SqliteConnection(_connectionstring);
 
-            var output = connection.Query<Result>("SELECT T.Id,T.Title,U.UserName FROM User U INNER JOIN Thread T on U.Id = T.UserId");
+            var output = connection.Query<ThreadResult>("SELECT T.Id,T.Title,U.UserName FROM User U INNER JOIN Thread T on U.Id = T.UserId");
 
             return output.ToList();
         }
@@ -76,7 +76,7 @@ namespace Forum.Threads
         }
     }
 
-    public class Result
+     public class ThreadResult
     {
         public int Id;
         public string Title;

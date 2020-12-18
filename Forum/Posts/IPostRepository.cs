@@ -7,6 +7,6 @@ namespace Forum.Posts
     public interface IPostRepository
     {
         void PrintAllPosts(int threadId);
-        IList<Post> GetAllPosts(int ThreadId);
+        IList<PostResult> GetAllPosts(int ThreadId);
     }
 }
