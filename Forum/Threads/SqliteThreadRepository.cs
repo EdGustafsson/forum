@@ -69,11 +69,6 @@ namespace Forum.Threads
             }
         }
 
-        public void PrintThread(Thread selectedThread)
-        {
-
-
-        }
     }
 
      public class ThreadResult

@@ -15,6 +15,5 @@ namespace Forum.Threads
         void AddThread(User activeUser);
 
         bool ThreadExists(string threadId);
-        void PrintThread(Thread selectedThread);
     }
 }

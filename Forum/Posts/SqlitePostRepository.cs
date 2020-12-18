@@ -45,7 +45,6 @@ namespace Forum.Posts
         {
             using var connection = new SqliteConnection(_connectionstring);
 
-          //  var output = connection.Query<Post>($"SELECT * FROM Post WHERE ThreadId={threadId}");
 
             var output = connection.Query<PostResult>($"SELECT P.Id,P.Content,U.UserName FROM User U INNER JOIN Post P on U.Id = P.UserId WHERE ThreadId={threadId}");
 
@@ -107,8 +106,6 @@ namespace Forum.Posts
 
             if (checkResults.Any())
             {
-
-             //   var isSuccess = connection.Delete(new Post { ThreadId = 1 });
 
                 var sql = $"DELETE FROM Post WHERE Id={cleanNum}";
 

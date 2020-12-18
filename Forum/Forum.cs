@@ -60,24 +60,17 @@ namespace Forum
 
                     _postRepository.PrintAllPosts(results[selectionNumber].Id);
 
-                    //   Console.WriteLine("Write a post or input x to exit");
-
-                    //  string userInput = Console.ReadLine();
-
                     Console.WriteLine("input 'c' to create a new post");
                     Console.WriteLine("input 'e' to edit your posts");
                     Console.WriteLine("input 'x' to exit");
                     string userInput = Console.ReadLine();
 
-                    if(userInput == "c")
+                    if (userInput == "c")
                     {
                         _postRepository.AddPost(_activeUser, results[selectionNumber].Id);
                     }
-                    else if(userInput == "e")
+                    else if (userInput == "e")
                     {
-                        // print all posts by _activeuser
-                       // then delete or edit
-                                   
                         _postRepository.PrintUserPosts(_activeUser, results[selectionNumber].Id);
 
                         Console.WriteLine("input 'e' to edit a post");
@@ -94,19 +87,25 @@ namespace Forum
                         {
                             _postRepository.UpdatePost(_activeUser, results[selectionNumber].Id);
                         }
+                        else
+                        {
+                            Console.WriteLine("Selection not found");
+                        }
 
 
 
                     }
-                    
-
+                
+                }
+                else
+                {
+                    Console.WriteLine("Selection not found");
                 }
 
 
 
             }
         }
-
 
     }
 }

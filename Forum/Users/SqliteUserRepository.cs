@@ -21,9 +21,6 @@ namespace Forum.Users
 
         }
 
-        //public User GetUser(string userName)
-        //{
-        //}
         public User GetUser(int userId)
         {
             using var connection = new SqliteConnection(_connectionstring);
