@@ -43,7 +43,7 @@ namespace Forum
 
                 Console.WriteLine("Select Thread with a number or 'C' to create new thread");
 
-            string selection = Console.ReadLine();
+                string selection = Console.ReadLine();
 
                 if (selection == "c")
                 {
@@ -58,6 +58,12 @@ namespace Forum
                     Console.WriteLine(results[selectionNumber].UserName);
 
                     _postRepository.PrintAllPosts(results[selectionNumber].Id);
+
+                 //   Console.WriteLine("Write a post or input x to exit");
+
+                 //  string userInput = Console.ReadLine();
+
+                    _postRepository.AddPost(_activeUser, results[selectionNumber].Id);
 
                 }
 
