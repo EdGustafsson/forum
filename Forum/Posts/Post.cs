@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Forum.Threads
+namespace Forum.Posts
 {
-    public class Thread
+    public class Post
     {
         public int Id { get; }
+        public int ThreadId { get; set; }
         public int UserId { get; set; }
-        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

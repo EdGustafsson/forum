@@ -13,5 +13,8 @@ namespace Forum.Threads
         IList<Result> GetAllThreads();
 
         void AddThread(User activeUser);
+
+        bool ThreadExists(string threadId);
+        void PrintThread(Thread selectedThread);
     }
 }

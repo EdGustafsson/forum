@@ -20,8 +20,4 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Posts\" />
-  </ItemGroup>
-
 </Project>

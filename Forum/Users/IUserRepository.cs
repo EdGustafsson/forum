@@ -8,7 +8,6 @@ namespace Forum.Users
     {
         void PrintVersion();
         bool UserExists(string userName, string password);
-
         User GetUser(string userName);
 
        // User GetUser(string userName, string password);

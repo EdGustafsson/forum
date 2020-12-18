@@ -8,7 +8,7 @@ using Forum.Users;
 
 namespace Forum.Threads
 {
-    class SqliteThreadRepository : IThreadRepository
+    public class SqliteThreadRepository : IThreadRepository
     {
 
         private const string _connectionstring = "Data Source=.\\forum.db";
@@ -47,15 +47,38 @@ namespace Forum.Threads
         {
             using var connection = new SqliteConnection(_connectionstring);
 
-            var output = connection.Query<Result>("SELECT T.Title,U.UserName FROM User U INNER JOIN Thread T on U.Id = T.UserId");
+            var output = connection.Query<Result>("SELECT T.Id,T.Title,U.UserName FROM User U INNER JOIN Thread T on U.Id = T.UserId");
 
             return output.ToList();
         }
 
+
+        public bool ThreadExists(string threadId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            var output = connection.Query<Thread>($"SELECT * FROM Thread WHERE Id={threadId}");
+
+            if (output.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void PrintThread(Thread selectedThread)
+        {
+
+
+        }
     }
 
     public class Result
     {
+        public int Id;
         public string Title;
         public string UserName;
     }
