@@ -27,6 +27,20 @@ namespace Forum.Posts
             }
         }
 
+        public void PrintUserPosts(User activeUser, int threadId)
+        {
+            int i = 1;
+            IList<PostResult> results = GetUserPosts(activeUser, threadId);
+
+            foreach (var result in results)
+            {
+
+                Console.WriteLine(result.Id + " " + result.UserName + " " + result.Content);
+                i++;
+            }
+
+        }
+
         public IList<PostResult> GetAllPosts(int threadId)
         {
             using var connection = new SqliteConnection(_connectionstring);
@@ -34,6 +48,24 @@ namespace Forum.Posts
           //  var output = connection.Query<Post>($"SELECT * FROM Post WHERE ThreadId={threadId}");
 
             var output = connection.Query<PostResult>($"SELECT P.Id,P.Content,U.UserName FROM User U INNER JOIN Post P on U.Id = P.UserId WHERE ThreadId={threadId}");
+
+            return output.ToList();
+        }
+
+        public IList<PostResult> GetUserPosts(User activeUser, int threadId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            var output = connection.Query<PostResult>($"SELECT P.Id,P.Content,U.UserName FROM User U INNER JOIN Post P on U.Id = P.UserId WHERE ThreadId={threadId} AND UserId={activeUser.Id}");
+
+            return output.ToList();
+        }
+
+        public IList<PostResult> GetUserPosts(User activeUser, int threadId, int postId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            var output = connection.Query<PostResult>($"SELECT P.Id,P.Content,U.UserName FROM User U INNER JOIN Post P on U.Id = P.UserId WHERE  P.Id={postId} AND UserId={activeUser.Id} AND ThreadId={threadId}");
 
             return output.ToList();
         }
@@ -62,6 +94,30 @@ namespace Forum.Posts
                 connection.Execute(sql, newPost);
             }
         }
+
+        public void RemovePost(User activeUser, int threadId)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            Console.WriteLine("Input the id of the post you would like to delete");
+            string userInput = Console.ReadLine();
+            int cleanNum = Convert.ToInt32(userInput);
+
+            IList<PostResult> checkResults = GetUserPosts(activeUser, threadId, cleanNum);
+
+            if (checkResults.Any())
+            {
+
+             //   var isSuccess = connection.Delete(new Post { ThreadId = 1 });
+
+                var sql = $"DELETE FROM Post WHERE Id={cleanNum}";
+
+                connection.Execute(sql);
+
+            }
+
+        }
+
     }
     public class PostResult
     {

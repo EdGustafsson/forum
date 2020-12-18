@@ -59,11 +59,41 @@ namespace Forum
 
                     _postRepository.PrintAllPosts(results[selectionNumber].Id);
 
-                 //   Console.WriteLine("Write a post or input x to exit");
+                    //   Console.WriteLine("Write a post or input x to exit");
 
-                 //  string userInput = Console.ReadLine();
+                    //  string userInput = Console.ReadLine();
 
-                    _postRepository.AddPost(_activeUser, results[selectionNumber].Id);
+                    Console.WriteLine("input 'c' to create a new post");
+                    Console.WriteLine("input 'e' to edit your posts");
+                    Console.WriteLine("input 'x' to exit");
+                    string userInput = Console.ReadLine();
+
+                    if(userInput == "c")
+                    {
+                        _postRepository.AddPost(_activeUser, results[selectionNumber].Id);
+                    }
+                    else if(userInput == "e")
+                    {
+                        // print all posts by _activeuser
+                       // then delete or edit
+                                   
+                        _postRepository.PrintUserPosts(_activeUser, results[selectionNumber].Id);
+
+                        Console.WriteLine("input 'e' to edit a post");
+                        Console.WriteLine("input 'd' to delete a post");
+                        Console.WriteLine("input 'x' to exit");
+
+                        string userInput2 = Console.ReadLine();
+
+                        if (userInput2 == "d")
+                        {
+                            _postRepository.RemovePost(_activeUser, results[selectionNumber].Id);
+                        }
+
+
+
+                    }
+                    
 
                 }
 

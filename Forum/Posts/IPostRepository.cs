@@ -10,5 +10,7 @@ namespace Forum.Posts
         void PrintAllPosts(int threadId);
         IList<PostResult> GetAllPosts(int threadId);
         void AddPost(User activeUser, int threadId);
+        void PrintUserPosts(User activeUser, int id);
+        void RemovePost(User activeUser, int threadId);
     }
 }
