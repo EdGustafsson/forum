@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Forum.Users;
 
 namespace Forum.Threads
 {
@@ -10,5 +11,7 @@ namespace Forum.Threads
         void PrintAllThreads();
 
         IList<Result> GetAllThreads();
+
+        void AddThread(User activeUser);
     }
 }

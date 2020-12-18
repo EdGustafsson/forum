@@ -10,9 +10,11 @@ namespace Forum
     {
         private static IUserRepository _userRepository;
         private static IThreadRepository _threadRepository;
-        public Forum(IUserRepository userRepository)
+        private static User _activeUser;
+        public Forum(IUserRepository userRepository, User activeUser)
         {
             _userRepository = userRepository;
+            _activeUser = activeUser;
         }
 
         public void ForumMain()
@@ -24,7 +26,12 @@ namespace Forum
 
             Console.WriteLine("Select Thread with a number or 'C' to create new thread");
 
+            string selection = Console.ReadLine();
 
+            if(selection == "c")
+            {
+                _threadRepository.AddThread(_activeUser);
+            }
         }
 
     }

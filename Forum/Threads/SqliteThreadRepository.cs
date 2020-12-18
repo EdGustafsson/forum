@@ -26,6 +26,23 @@ namespace Forum.Threads
             }
         }
 
+        public void AddThread(User activeUser)
+        {
+            using var connection = new SqliteConnection(_connectionstring);
+
+            Console.WriteLine("Write a title:");
+            string userInput = Console.ReadLine();
+
+            Thread newThread = new Thread();
+
+            newThread.UserId = activeUser.Id;
+            newThread.Title = userInput;
+
+            var sql = $"INSERT INTO Thread (UserId, Title) VALUES(@UserId, @Title)";
+
+            connection.Execute(sql, newThread);
+        }
+
         public IList<Result> GetAllThreads()
         {
             using var connection = new SqliteConnection(_connectionstring);

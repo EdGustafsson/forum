@@ -15,10 +15,10 @@ namespace Forum
 
             _userRepository = new SqliteUserRepository();
 
-         //   _login = new Login(_userRepository);
-         //  _activeUser = _login.LoginUser();
+            _login = new Login(_userRepository);
+            _activeUser = _login.LoginUser();
 
-            _forum = new Forum(_userRepository);
+            _forum = new Forum(_userRepository, _activeUser);
             _forum.ForumMain(); 
         }
     }
